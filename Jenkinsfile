@@ -7,7 +7,7 @@ node {
 }
    stage('Deployment')
    {
-       deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://172.31.82.183:8080')], contextPath: 'qaapp', war: '**\\*.war'
+       deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://172.31.216.245:8080')], contextPath: 'qaapp', war: '**\\*.war'
    }
    stage('testing')
     {
@@ -16,7 +16,7 @@ node {
     }
     stage('Delivery')
     {
-        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://172.31.83.134:8080')], contextPath: 'prodapp', war: '**\\*.war'
+        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://172.31.180.30:8080')], contextPath: 'prodapp', war: '**\\*.war'
     }
     
 }
