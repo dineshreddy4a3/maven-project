@@ -14,9 +14,6 @@ node {
         git 'https://github.com/AnupamaSoma/FunctionalTesting.git'
         sh 'java -jar /var/lib/jenkins/workspace/scripted_pipeline/testing.jar'
     }
-    stage('Delivery')
-    {
-        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://172.31.180.30:8080')], contextPath: 'prodapp', war: '**\\*.war'
-    }
+   
     
 }
